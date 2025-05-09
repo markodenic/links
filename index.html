@@ -16,7 +16,8 @@
             --card-bg-dark: #1a1a1a;
             --hover-dark: #222;
 
-            --gold: #3b3b3b;
+            --purple: #6a4889;
+            --gold: #ffd471;
             --radius: 12px;
             --transition: all 0.3s ease;
         }
@@ -26,6 +27,7 @@
             --text: var(--text-dark);
             --card-bg: var(--card-bg-dark);
             --hover: var(--hover-dark);
+            --theme-accent: var(--purple);
         }
 
         [data-theme="light"] {
@@ -33,6 +35,7 @@
             --text: var(--text-light);
             --card-bg: var(--card-bg-light);
             --hover: var(--hover-light);
+            --theme-accent: var(--gold);
         }
 
         * {
@@ -66,8 +69,8 @@
 
         .avatar-wrapper {
             position: relative;
-            display: inline-block; /* To wrap content tightly */
-            margin-bottom: 1rem; /* Keeps the original spacing below avatar */
+            display: inline-block;
+            margin-bottom: 1rem;
         }
 
         .avatar {
@@ -75,9 +78,8 @@
             height: 120px;
             border-radius: 60%;
             object-fit: cover;
-            /* margin-bottom: 1rem; Moved to avatar-wrapper */
-            display: block; /* Prevents extra space below if parent is inline-block */
-            border: 5px solid var(--gold);
+            display: block;
+            border: 5px solid var(--theme-accent);
         }
 
         h1 {
@@ -110,6 +112,7 @@
 
         .link:hover {
             opacity: 0.8;
+            color: var(--theme-accent);
         }
 
         .social-icons {
@@ -135,10 +138,14 @@
         }
 
         .social-icons svg {
-            width: 24px; /* Consistent icon size */
-            height: 24px; /* Consistent icon size */
-            fill: var(--text); /* Or currentColor if <a> has color set and SVG path uses currentColor */
-            display: block; /* Prevents potential extra space */
+            width: 24px;
+            height: 24px;
+            fill: var(--text);
+            display: block;
+        }
+
+        .social-icons svg:hover {
+            fill: var(--theme-accent);
         }
 
         .footer {
@@ -181,6 +188,136 @@
         .theme-toggle:hover {
             opacity: 0.9;
         }
+
+        /* Rounded border */
+        hr.rounded {
+            border: none; /* Remove default browser border */
+            height: 2px; /* Give the HR some thickness */
+            background: #888; /* Set the color of the divider */
+            border-radius: 2px;
+            margin: 30px auto; /* 30px top/bottom margin, centered horizontally */
+            width: 50%; /* Set an appropriate width, e.g., 80% of its container */
+        }
+
+        /* Timeline Container */
+        .timeline {
+        background: --card-bg;
+        margin: 10px auto;
+        padding: 10px;
+        }
+
+        /* Card container */
+        .card {
+        position: relative;
+        max-width: 400px;
+        }
+
+        /* setting padding based on even or odd */
+        .card:nth-child(odd) {
+        padding: 30px 0 30px 30px;
+        }
+        .card:nth-child(even) {
+        padding: 30px 30px 30px 0;
+        }
+        /* Global ::before */
+        .card::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        border: solid var(--theme-accent);
+        }
+
+        /* Setting the border of top, bottom, left */
+        .card:nth-child(odd)::before {
+        left: 0px;
+        top: -4.5px;
+        bottom: -4.5px;
+        border-width: 5px 0 5px 5px;
+        border-radius: 50px 0 0 50px;
+        }
+
+        /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
+        @media only screen and (max-width: 400px) {
+        .card:nth-child(odd)::before {
+            top: -5px;
+            bottom: -5px;
+            }
+        }
+
+        /* Setting the border of top, bottom, right */
+        .card:nth-child(even)::before {
+        right: 0;
+        top: 0;
+        bottom: 0;
+        border-width: 5px 5px 5px 0;
+        border-radius: 0 50px 50px 0;
+        }
+
+        /* Removing the border if it is the first card */
+        .card:first-child::before {
+        border-top: 0;
+        border-top-left-radius: 0;
+        }
+
+        /* Removing the border if it is the last card  and it's odd */
+        .card:last-child:nth-child(odd)::before {
+        border-bottom: 0;
+        border-bottom-left-radius: 0;
+        }
+
+        /* Removing the border if it is the last card  and it's even */
+        .card:last-child:nth-child(even)::before {
+        border-bottom: 0;
+        border-bottom-right-radius: 0;
+        }
+
+        /* Information about the timeline */
+        .info {
+        display: flex;
+        flex-direction: column;
+        background: --card-bg;
+        color: gray;
+        border-radius: 10px;
+        padding: 10px;
+        }
+
+        /* Title of the card */
+        .title {
+        color: var(--theme-accent);
+        position: relative;
+        text-align: center;
+        }
+
+        /* Timeline dot  */
+        .title::before {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: white;
+        border-radius: 20px;
+        border: 3px solid var(--theme-accent);
+        }
+
+        /* text left if the card is odd  */
+        .card:nth-child(odd) > .info > .title {
+        text-align: center;
+        }
+
+        /* text right if the card is even  */
+        .card:nth-child(even) > .info > .title {
+        text-align: center;
+        }
+
+        /* setting dot to the left if the card is odd */
+        .card:nth-child(odd) > .info > .title::before {
+        left: -45px;
+        }
+
+        /* setting dot to the right if the card is odd */
+        .card:nth-child(even) > .info > .title::before {
+        right: -45px;
+        }
     </style>
 </head>
 
@@ -194,54 +331,73 @@
 
     <h1>Vasanthakumar</h1>
 
-    <p class="bio">Software Engineer</p>
+    <h2 class="bio">Software Engineer</h2>
 
     <div class="bio">
         <p>Hey, I'm a developer based in Malaysia.</p>
-        <p>I have been building software in for over a 4 years now after completing my computer science degree.</p>
+        <p>I have been building software for over 4 years now after completing my computer science degree.</p>
         <p>When I'm not shipping products, I like to trade 📈 and indulge in some games 🎮</p>
     </div>
 
-    <div class="links">
+    <hr class="rounded">
+
+    <div class="">
         <h2>
-            Work Experience
+            Career Journey
         </h2>
 
-        <a href="https://markodenic.com/tools/buttons-generator/" class="link" target="_blank">
-            Button Generator
-        </a>
-
-        <a href="https://markodenic.com/tools/glassmorphism-css-generator/" class="link" target="_blank">
-            Glassmorphism CSS Generator
-        </a>
-
-        <a href="https://freecodetools.org/qr-code-generator/" class="link" target="_blank">
-            QR Code Generator
-        </a>
-
-        <a href="https://javascriptquiz.com/" class="link" target="_blank">
-            JavaScript Quiz
-        </a>
+        <div class="timeline">
+            <div class="outer">
+                <div class="card">
+                    <div class="info">
+                        <h3 class="title">Packaged App. Development Sr Analyst</h3>
+                        <p>Led RESTful API development, defect resolution, and overseas Go-Live. Collaborated with cross-functional teams and vendors, contributed features, and served as sub-lead in banking projects.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="info">
+                        <h3 class="title">Frontend Developer</h3>
+                        <p>Developed banking frontend features using Agile, MVVM, and SOLID. Wrote unit tests, created HLDs, and collaborated across teams to deliver timely enhancements and deliverables.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="info">
+                        <h3 class="title">Software Development Engineer 1</h3>
+                        <p>Maintained and enhanced regional apps, migrated Java to Kotlin, collaborated on UI/UX, released to Play Store, and developed new features aligned with roadmap goals.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="info">
+                        <h3 class="title">Research Assistant</h3>
+                        <p>Developed Android apps for attendance and Covid tracking, designed UI/UX, and integrated REST APIs with MySQL, supporting academic research projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <hr class="rounded">
 
     <div class="links">
         <h2>
             Personal Projects
         </h2>
 
-        <a href="https://markodenic.com/css-pulse-animation/" class="link" target="_blank">
-            CSS Pulse Animation
+        <a href="https://github.com/Vasanthakumar95/CryptoBasics" class="link" target="_blank">
+            Crypto Basics
         </a>
 
-        <a href="https://markodenic.com/git-cheat-sheet/" class="link" target="_blank">
-            Git Cheat Sheet
+        <a href="https://github.com/Vasanthakumar95/moviez" class="link" target="_blank">
+            Moviez
         </a>
 
-        <a href="https://markodenic.com/from-zero-to-web-developer/" class="link" target="_blank">
-            From zero to Web Developer
+        <a href="https://github.com/Vasanthakumar95/Eco-Wheel" class="link" target="_blank">
+            Eco-Wheel
         </a>
 
     </div>
+
+    <hr class="rounded">
 
     <div class="social-icons">
         <a href="https://github.com/Vasanthakumar95" target="_blank" title="GitHub" aria-label="GitHub">
@@ -271,7 +427,7 @@
 
         <span class="social-separator">|</span>
 
-        <a href="YOUR_CV_FILENAME.pdf" download="YOUR_NAME_CV.pdf" title="Download CV" aria-label="Download CV">
+        <a href="vasanthakumar.pdf" download="vasanthakumar.pdf" title="Download CV" aria-label="Download CV">
             <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 31.004 31.004" xml:space="preserve"><g>
                 <path d="M22.398,31.004v-4.512c0-0.938,0.757-1.701,1.697-1.701l3.498-0.1L22.398,31.004z"/>
                 <path d="M25.896,0H5.105C4.168,0,3.41,0.762,3.41,1.695v27.611c0,0.939,0.758,1.697,1.695,1.697h15.604v-6.02 c0-0.936,0.764-1.695,1.699-1.695h5.186V1.695C27.594,0.762,26.836,0,25.896,0z M14.295,24.521l-4.328,4.674l-4.219-4.791h2.109 v-6.779h4.326v6.896H14.295z"/>
