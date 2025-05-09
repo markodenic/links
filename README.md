@@ -1,4 +1,4 @@
-# 🌐 Link in Bio Template
+# 📝 Single Page CV Template
 
 A clean, modern, mobile-friendly “Link in Bio” page.
 This fork is to experiment with single page cv concept.
