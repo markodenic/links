@@ -13,3 +13,18 @@ Perfect for creators, developers, and professionals who want a personal landing 
 - 🔗 Main links + social icons (SVG)
 - 🛠 Easy to customize
 - © Dynamic year in footer
+
+---
+
+## Make your own Links page
+
+1. Fork this repository.
+2. Adjust links.
+3. Deploy it!
+4. Add it to the list below (optional, of course)
+5. Share it on Social Media (and show it ot me, I'd love to see it)
+
+---
+
+## Used by
+[Marko Denic](https://denicmarko.pages.dev)
