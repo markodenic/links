@@ -18,7 +18,10 @@ Perfect for creators, developers, and professionals who want a personal landing 
 ## ✨ Additional Changes
 
 - 🌑/🌕 Dark/light theme icon changes with theme (Repositoned)
-- ⬇️ Added Download CV button 
+- ⬇️ Added Download CV button
+- added time-line section
+- hover effect follows theme
 
 ## ✨ Huge Credits 
 - [markodenic.com](https://github.com/markodenic/links)
+- [Jatin Sharma](https://codepen.io/j471n/pens/showcase)
