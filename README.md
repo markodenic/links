@@ -5,6 +5,8 @@ This fork is to experiment with single page cv concept.
 Perfect for creators, developers, and professionals who want a personal landing page with their most important links and social icons.
 
 ---
+## ✨ Live
+- [vasan.dev](https://www.vasan.dev/)
 
 ## ✨ Features
 
@@ -19,8 +21,9 @@ Perfect for creators, developers, and professionals who want a personal landing 
 
 - 🌑/🌕 Dark/light theme icon changes with theme (Repositoned)
 - ⬇️ Added Download CV button
-- added time-line section
-- hover effect follows theme
+- added section seperator
+- added timeline section
+- button and links hover effect follows theme
 
 ## ✨ Huge Credits 
 - [markodenic.com](https://github.com/markodenic/links)
