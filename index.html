@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
+
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Vasan</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marko Denic | Links</title>
     <style>
         :root {
             --bg-light: #ffffff;
@@ -16,8 +17,7 @@
             --card-bg-dark: #1a1a1a;
             --hover-dark: #222;
 
-            --purple: #6a4889;
-            --gold: #ffd471;
+            --gold: #ffd700;
             --radius: 12px;
             --transition: all 0.3s ease;
         }
@@ -27,7 +27,6 @@
             --text: var(--text-dark);
             --card-bg: var(--card-bg-dark);
             --hover: var(--hover-dark);
-            --theme-accent: var(--purple);
         }
 
         [data-theme="light"] {
@@ -35,7 +34,6 @@
             --text: var(--text-light);
             --card-bg: var(--card-bg-light);
             --hover: var(--hover-light);
-            --theme-accent: var(--gold);
         }
 
         * {
@@ -67,19 +65,13 @@
             transition: var(--transition);
         }
 
-        .avatar-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 1rem;
-        }
-
         .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 60%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             object-fit: cover;
-            display: block;
-            border: 5px solid var(--theme-accent);
+            margin-bottom: 1rem;
+            border: 2px solid var(--gold);
         }
 
         h1 {
@@ -112,13 +104,11 @@
 
         .link:hover {
             opacity: 0.8;
-            color: var(--theme-accent);
         }
 
         .social-icons {
             display: flex;
             justify-content: center;
-            align-items: center;
             gap: 1rem;
         }
 
@@ -138,25 +128,15 @@
         }
 
         .social-icons svg {
-            width: 24px;
-            height: 24px;
+            width: 36px;
+            height: 36px;
             fill: var(--text);
-            display: block;
-        }
-
-        .social-icons svg:hover {
-            fill: var(--theme-accent);
         }
 
         .footer {
             margin-top: 2rem;
             font-size: 0.8rem;
             color: #666;
-        }
-        
-        .social-separator {
-            color: var(--text);
-            opacity: 0.6;
         }
 
         .credit {
@@ -173,9 +153,8 @@
 
         .theme-toggle {
             position: absolute;
-            top: 1px; 
-            right: 1px; 
-            z-index: 10; 
+            top: 1rem;
+            right: 1rem;
             background: none;
             border: none;
             color: var(--text);
@@ -185,287 +164,134 @@
         }
 
         .theme-toggle:hover {
-            opacity: 0.9;
-        }
-
-        /* Rounded border */
-        hr.rounded {
-            border: none;
-            height: 2px;
-            background: #888;
-            border-radius: 2px;
-            margin: 30px auto;
-            width: 50%;
-        }
-
-        /* Timeline Container */
-        .timeline {
-        background: --card-bg;
-        margin: 10px auto;
-        padding: 10px;
-        }
-
-        /* Card container */
-        .card {
-        position: relative;
-        max-width: 400px;
-        }
-
-        /* setting padding based on even or odd */
-        .card:nth-child(odd) {
-        padding: 30px 0 30px 30px;
-        }
-        .card:nth-child(even) {
-        padding: 30px 30px 30px 0;
-        }
-        /* Global ::before */
-        .card::before {
-        content: "";
-        position: absolute;
-        width: 50%;
-        border: solid var(--theme-accent);
-        }
-
-        /* Setting the border of top, bottom, left */
-        .card:nth-child(odd)::before {
-        left: 0px;
-        top: -4.5px;
-        bottom: -4.5px;
-        border-width: 5px 0 5px 5px;
-        border-radius: 50px 0 0 50px;
-        }
-
-        /* Setting the top and bottom to "-5px" because earlier it was out of a pixel in mobile devices */
-        @media only screen and (max-width: 400px) {
-        .card:nth-child(odd)::before {
-            top: -5px;
-            bottom: -5px;
-            }
-        }
-
-        /* Setting the border of top, bottom, right */
-        .card:nth-child(even)::before {
-        right: 0;
-        top: 0;
-        bottom: 0;
-        border-width: 5px 5px 5px 0;
-        border-radius: 0 50px 50px 0;
-        }
-
-        /* Removing the border if it is the first card */
-        .card:first-child::before {
-        border-top: 0;
-        border-top-left-radius: 0;
-        }
-
-        /* Removing the border if it is the last card  and it's odd */
-        .card:last-child:nth-child(odd)::before {
-        border-bottom: 0;
-        border-bottom-left-radius: 0;
-        }
-
-        /* Removing the border if it is the last card  and it's even */
-        .card:last-child:nth-child(even)::before {
-        border-bottom: 0;
-        border-bottom-right-radius: 0;
-        }
-
-        /* Information about the timeline */
-        .info {
-        display: flex;
-        flex-direction: column;
-        background: --card-bg;
-        color: gray;
-        border-radius: 10px;
-        padding: 10px;
-        }
-
-        /* Title of the card */
-        .title {
-        color: var(--theme-accent);
-        position: relative;
-        text-align: center;
-        }
-
-        /* Timeline dot  */
-        .title::before {
-        content: "";
-        position: absolute;
-        width: 10px;
-        height: 10px;
-        background: white;
-        border-radius: 20px;
-        border: 3px solid var(--theme-accent);
-        }
-
-        /* text left if the card is odd  */
-        .card:nth-child(odd) > .info > .title {
-        text-align: center;
-        }
-
-        /* text right if the card is even  */
-        .card:nth-child(even) > .info > .title {
-        text-align: center;
-        }
-
-        /* setting dot to the left if the card is odd */
-        .card:nth-child(odd) > .info > .title::before {
-        left: -45px;
-        }
-
-        /* setting dot to the right if the card is odd */
-        .card:nth-child(even) > .info > .title::before {
-        right: -45px;
+            opacity: 0.8;
         }
     </style>
 </head>
 
 <body>
+    <button class="theme-toggle" id="toggleTheme" title="Toggle dark/light mode"
+        aria-label="Toggle dark/light mode">🌓</button>
 
-<div class="container">
-    <div class="avatar-wrapper">
-        <img src="48633481.jpg" alt="Vasan Avatar" class="avatar">
-        <button class="theme-toggle" id="toggleTheme" title="Toggle dark/light mode" aria-label="Toggle dark/light mode"></button> <!-- Icon will be set by JavaScript -->
-    </div>
+    <div class="container">
+        <img src="https://unavatar.io/x/denicmarko" alt="Marko Denic Avatar" class="avatar" />
 
-    <h1>Vasanthakumar</h1>
+        <h1>Marko Denic</h1>
 
-    <h2 class="bio">Software Engineer</h2>
+        <p class="bio">Software Engineer · Community Builder · Creator</p>
 
-    <div class="bio">
-        <p>Hey, I'm a developer based in Malaysia.</p>
-        <p>I have been building software for over 4 years now after completing my computer science degree.</p>
-        <p>When I'm not shipping products, I like to trade 📈 and indulge in some games 🎮</p>
-    </div>
+        <div class="links">
+            <a href="https://markodenic.com" class="link" target="_blank">Visit My Website</a>
+            <a href="https://techwithmarko.com" class="link" target="_blank">Subscribe to Newsletter</a>
+        </div>
 
-    <hr class="rounded">
+        <div class="links">
+            <h2>
+                Tools I made for you
+            </h2>
 
-    <div class="">
-        <h2>
-            Career Journey
-        </h2>
+            <a href="https://markodenic.com/tools/buttons-generator/" class="link" target="_blank">
+                Button Generator
+            </a>
 
-        <div class="timeline">
-            <div class="outer">
-                <div class="card">
-                    <div class="info">
-                        <h3 class="title">Packaged App. Development Sr Analyst</h3>
-                        <p>Led RESTful API development, defect resolution, and overseas Go-Live. Collaborated with cross-functional teams and vendors, contributed features, and served as sub-lead in banking projects.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="info">
-                        <h3 class="title">Frontend Developer</h3>
-                        <p>Developed banking frontend features using Agile, MVVM, and SOLID. Wrote unit tests, created HLDs, and collaborated across teams to deliver timely enhancements and deliverables.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="info">
-                        <h3 class="title">Software Development Engineer 1</h3>
-                        <p>Maintained and enhanced regional apps, migrated Java to Kotlin, collaborated on UI/UX, released to Play Store, and developed new features aligned with roadmap goals.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="info">
-                        <h3 class="title">Research Assistant</h3>
-                        <p>Developed Android apps for attendance and Covid tracking, designed UI/UX, and integrated REST APIs with MySQL, supporting academic research projects.</p>
-                    </div>
-                </div>
-            </div>
+            <a href="https://markodenic.com/tools/glassmorphism-css-generator/" class="link" target="_blank">
+                Glassmorphism CSS Generator
+            </a>
+
+            <a href="https://freecodetools.org/qr-code-generator/" class="link" target="_blank">
+                QR Code Generator
+            </a>
+
+            <a href="https://javascriptquiz.com/" class="link" target="_blank">
+                JavaScript Quiz
+            </a>
+        </div>
+
+        <div class="links">
+            <h2>
+                Trending articles
+            </h2>
+
+            <a href="https://markodenic.com/css-pulse-animation/" class="link" target="_blank">
+                CSS Pulse Animation
+            </a>
+
+            <a href="https://markodenic.com/git-cheat-sheet/" class="link" target="_blank">
+                Git Cheat Sheet
+            </a>
+
+            <a href="https://markodenic.com/from-zero-to-web-developer/" class="link" target="_blank">
+                From zero to Web Developer
+            </a>
+
+        </div>
+
+        <div class="social-icons">
+            <a href="https://github.com/markodenic" target="_blank" title="GitHub" aria-label="GitHub">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 2.24902C6.51613 2.24902 2 6.70064 2 12.249C2 16.6361 4.87097 20.3781 8.87097 21.7329C9.3871 21.8297 9.54839 21.5071 9.54839 21.2813C9.54839 21.0555 9.54839 20.4103 9.51613 19.5393C6.74194 20.1845 6.16129 18.1845 6.16129 18.1845C5.70968 17.0555 5.03226 16.7329 5.03226 16.7329C4.12903 16.0877 5.06452 16.0877 5.06452 16.0877C6.06452 16.12 6.6129 17.12 6.6129 17.12C7.48387 18.6684 8.96774 18.2168 9.51613 17.9264C9.6129 17.2813 9.87097 16.8297 10.1613 16.5716C7.96774 16.3458 5.6129 15.4748 5.6129 11.6684C5.6129 10.5716 6.03226 9.70064 6.64516 9.02322C6.54839 8.79741 6.19355 7.76515 6.74194 6.37806C6.74194 6.37806 7.6129 6.11999 9.51613 7.41031C10.3226 7.18451 11.1613 7.05548 12.0323 7.05548C12.9032 7.05548 13.7742 7.15225 14.5484 7.41031C16.4516 6.15225 17.2903 6.37806 17.2903 6.37806C17.8387 7.73289 17.5161 8.79741 17.3871 9.02322C18.0323 9.70064 18.4194 10.6039 18.4194 11.6684C18.4194 15.4748 16.0645 16.3458 13.871 16.5716C14.2258 16.8942 14.5484 17.5393 14.5484 18.4426C14.5484 19.7974 14.5161 20.8619 14.5161 21.1845C14.5161 21.4426 14.7097 21.7329 15.1935 21.6361C19.129 20.3135 22 16.6039 22 12.1845C21.9677 6.70064 17.4839 2.24902 12 2.24902Z" />
+                </svg>
+            </a>
+
+            <a href="https://x.com/denicmarko" target="_blank" title="Twitter" aria-label="Twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.7512 2.96094H20.818L14.1179 10.6187L22 21.0391H15.8284L10.9946 14.7191L5.4636 21.0391H2.39492L9.56132 12.8483L2 2.96094H8.32824L12.6976 8.73762L17.7512 2.96094ZM16.6748 19.2035H18.3742L7.40492 4.70014H5.58132L16.6748 19.2035Z" />
+                </svg>
+
+            </a>
+
+            <a href="https://linkedin.com/in/denicmarko" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M19.7065 3H4.34844C3.62264 3 3.04199 3.58065 3.04199 4.30645V19.6935C3.04199 20.3903 3.62264 21 4.34844 21H19.6485C20.3743 21 20.9549 20.4194 20.9549 19.6935V4.27742C21.013 3.58065 20.4323 3 19.7065 3ZM8.35491 18.3H5.71297V9.73548H8.35491V18.3ZM7.01942 8.54516C6.14846 8.54516 5.4807 7.84839 5.4807 7.00645C5.4807 6.16452 6.17749 5.46774 7.01942 5.46774C7.86136 5.46774 8.55813 6.16452 8.55813 7.00645C8.55813 7.84839 7.91942 8.54516 7.01942 8.54516ZM18.371 18.3H15.7291V14.1484C15.7291 13.1613 15.7001 11.8548 14.3356 11.8548C12.942 11.8548 12.7388 12.9581 12.7388 14.0613V18.3H10.0968V9.73548H12.6807V10.9258H12.7097C13.0872 10.229 13.9291 9.53226 15.2356 9.53226C17.9356 9.53226 18.4291 11.2742 18.4291 13.6548V18.3H18.371Z" />
+                </svg>
+            </a>
+
+            <a href="https://codepen.io/denic/" target="_blank" title="Codepen" aria-label="Codepen">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.6594 8.26409L12.4807 2.14493C12.1586 1.95169 11.8365 1.95169 11.5145 2.14493L2.36794 8.26409C2.1425 8.39291 2.01367 8.71498 2.01367 8.94042V15.0274C2.01367 15.285 2.1425 15.5749 2.36794 15.7681L11.5145 21.8551C11.8365 22.0483 12.1586 22.0483 12.4807 21.8551L21.6272 15.7681C21.8526 15.6393 21.9815 15.3172 21.9815 15.0274V8.94042C22.0137 8.68277 21.8848 8.39291 21.6594 8.26409ZM12.8671 4.46377L19.5982 8.97263L16.5386 10.9694L12.8349 8.45733C12.8671 8.45733 12.8671 4.46377 12.8671 4.46377ZM11.1602 4.46377V8.45733L7.4243 10.9694L4.42913 8.97263L11.1602 4.46377ZM3.7528 10.5507L5.87841 12L3.7528 13.4493V10.5507ZM11.1602 19.5362L4.42913 15.0274L7.4243 13.0306L11.1602 15.5427V19.5362ZM12.0298 14.0612L8.97019 12L12.0298 9.93881L15.0894 12L12.0298 14.0612ZM12.8671 19.5362V15.5427L16.603 13.0306L19.5982 15.0274L12.8671 19.5362ZM20.2745 13.4493L18.1489 12L20.2745 10.5507V13.4493Z" />
+                </svg>
+            </a>
+
+            <a href="https://www.youtube.com/@TechWithMarko" target="_blank" title="YouTube" aria-label="YouTube">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.5806 7.19355C21.3548 6.32258 20.6774 5.64516 19.8065 5.41935C18.2581 5 12 5 12 5C12 5 5.74194 5 4.19355 5.41935C3.32258 5.64516 2.64516 6.32258 2.41935 7.19355C2 8.77419 2 12 2 12C2 12 2 15.2581 2.41935 16.8065C2.64516 17.6774 3.32258 18.3548 4.19355 18.5806C5.74194 19 12 19 12 19C12 19 18.2581 19 19.8065 18.5806C20.6774 18.3548 21.3548 17.6774 21.5806 16.8065C22 15.2581 22 12 22 12C22 12 22 8.77419 21.5806 7.19355ZM10 15V9L15.1935 12L10 15Z" />
+                </svg>
+            </a>
+        </div>
+
+        <div class="footer">© <span id="year"></span>Marko Denic</div>
+
+        <div class="credit">
+            Template by <a href="https://markodenic.com" target="_blank">Marko Denic</a> ·
+            <a href="https://github.com/markodenic/links" target="_blank">View source on GitHub</a>
         </div>
     </div>
 
-    <hr class="rounded">
+    <script>
+        const toggle = document.getElementById("toggleTheme");
+        const root = document.documentElement;
 
-    <div class="links">
-        <h2>
-            Personal Projects
-        </h2>
+        const storedTheme = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-        <a href="https://github.com/Vasanthakumar95/CryptoBasics" class="link" target="_blank">
-            Crypto Basics
-        </a>
+        const theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        root.setAttribute("data-theme", theme);
 
-        <a href="https://github.com/Vasanthakumar95/moviez" class="link" target="_blank">
-            Moviez
-        </a>
+        toggle.addEventListener("click", () => {
+            const current = root.getAttribute("data-theme");
+            const newTheme = current === "dark" ? "light" : "dark";
+            root.setAttribute("data-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+        });
 
-        <a href="https://github.com/Vasanthakumar95/Eco-Wheel" class="link" target="_blank">
-            Eco-Wheel
-        </a>
-
-    </div>
-
-    <hr class="rounded">
-
-    <div class="social-icons">
-        <a href="https://github.com/Vasanthakumar95" target="_blank" title="GitHub" aria-label="GitHub">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M12 2.24902C6.51613 2.24902 2 6.70064 2 12.249C2 16.6361 4.87097 20.3781 8.87097 21.7329C9.3871 21.8297 9.54839 21.5071 9.54839 21.2813C9.54839 21.0555 9.54839 20.4103 9.51613 19.5393C6.74194 20.1845 6.16129 18.1845 6.16129 18.1845C5.70968 17.0555 5.03226 16.7329 5.03226 16.7329C4.12903 16.0877 5.06452 16.0877 5.06452 16.0877C6.06452 16.12 6.6129 17.12 6.6129 17.12C7.48387 18.6684 8.96774 18.2168 9.51613 17.9264C9.6129 17.2813 9.87097 16.8297 10.1613 16.5716C7.96774 16.3458 5.6129 15.4748 5.6129 11.6684C5.6129 10.5716 6.03226 9.70064 6.64516 9.02322C6.54839 8.79741 6.19355 7.76515 6.74194 6.37806C6.74194 6.37806 7.6129 6.11999 9.51613 7.41031C10.3226 7.18451 11.1613 7.05548 12.0323 7.05548C12.9032 7.05548 13.7742 7.15225 14.5484 7.41031C16.4516 6.15225 17.2903 6.37806 17.2903 6.37806C17.8387 7.73289 17.5161 8.79741 17.3871 9.02322C18.0323 9.70064 18.4194 10.6039 18.4194 11.6684C18.4194 15.4748 16.0645 16.3458 13.871 16.5716C14.2258 16.8942 14.5484 17.5393 14.5484 18.4426C14.5484 19.7974 14.5161 20.8619 14.5161 21.1845C14.5161 21.4426 14.7097 21.7329 15.1935 21.6361C19.129 20.3135 22 16.6039 22 12.1845C21.9677 6.70064 17.4839 2.24902 12 2.24902Z"
-                />
-            </svg>
-        </a>
-
-        <a href="https://x.com/VKRJMNKM" target="_blank" title="Twitter" aria-label="Twitter">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M17.7512 2.96094H20.818L14.1179 10.6187L22 21.0391H15.8284L10.9946 14.7191L5.4636 21.0391H2.39492L9.56132 12.8483L2 2.96094H8.32824L12.6976 8.73762L17.7512 2.96094ZM16.6748 19.2035H18.3742L7.40492 4.70014H5.58132L16.6748 19.2035Z"
-                />
-            </svg>
-
-        </a>
-
-        <a href="https://linkedin.com/in/vasantrajamanickam" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                    d="M19.7065 3H4.34844C3.62264 3 3.04199 3.58065 3.04199 4.30645V19.6935C3.04199 20.3903 3.62264 21 4.34844 21H19.6485C20.3743 21 20.9549 20.4194 20.9549 19.6935V4.27742C21.013 3.58065 20.4323 3 19.7065 3ZM8.35491 18.3H5.71297V9.73548H8.35491V18.3ZM7.01942 8.54516C6.14846 8.54516 5.4807 7.84839 5.4807 7.00645C5.4807 6.16452 6.17749 5.46774 7.01942 5.46774C7.86136 5.46774 8.55813 6.16452 8.55813 7.00645C8.55813 7.84839 7.91942 8.54516 7.01942 8.54516ZM18.371 18.3H15.7291V14.1484C15.7291 13.1613 15.7001 11.8548 14.3356 11.8548C12.942 11.8548 12.7388 12.9581 12.7388 14.0613V18.3H10.0968V9.73548H12.6807V10.9258H12.7097C13.0872 10.229 13.9291 9.53226 15.2356 9.53226C17.9356 9.53226 18.4291 11.2742 18.4291 13.6548V18.3H18.371Z"
-                />
-            </svg>
-        </a>
-
-        <span class="social-separator">|</span>
-
-        <a href="vasanthakumar.pdf" download="vasanthakumar.pdf" title="Download CV" aria-label="Download CV">
-            <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 31.004 31.004" xml:space="preserve"><g>
-                <path d="M22.398,31.004v-4.512c0-0.938,0.757-1.701,1.697-1.701l3.498-0.1L22.398,31.004z"/>
-                <path d="M25.896,0H5.105C4.168,0,3.41,0.762,3.41,1.695v27.611c0,0.939,0.758,1.697,1.695,1.697h15.604v-6.02 c0-0.936,0.764-1.695,1.699-1.695h5.186V1.695C27.594,0.762,26.836,0,25.896,0z M14.295,24.521l-4.328,4.674l-4.219-4.791h2.109 v-6.779h4.326v6.896H14.295z"/>
-            </svg>
-        </a>
-    </div>
-
-    <div class="footer">©️<span id="year"></span> Vasanthakumar</div>
-</div>
-
-<script>
-    const toggle = document.getElementById("toggleTheme");
-    const root = document.documentElement;
-
-    function setToggleIcon(theme) {
-        if (theme === "dark") {
-            toggle.textContent = "🌑";
-        } else {
-            toggle.textContent = "🌕";
-        }
-    }
-
-    const storedTheme = localStorage.getItem("theme");
-    let currentTheme = storedTheme || root.getAttribute("data-theme") || "dark";
-
-    root.setAttribute("data-theme", currentTheme);
-    setToggleIcon(currentTheme);
-
-    toggle.addEventListener("click", () => {
-        const activeTheme = root.getAttribute("data-theme");
-        const newTheme = activeTheme === "dark" ? "light" : "dark";
-
-        root.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        setToggleIcon(newTheme); 
-    });
-
-    // Dynamic Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-</script>
+        // Dynamic Year
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
