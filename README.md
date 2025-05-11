@@ -1,12 +1,9 @@
-# 📝 Single Page CV Template
+# 🌐 Link in Bio Template
 
-A clean, modern, mobile-friendly “Link in Bio” page.
-This fork is to experiment with single page cv concept.
+A clean, modern, mobile-friendly “Link in Bio” page — inspired by [markodenic.com](https://markodenic.com).  
 Perfect for creators, developers, and professionals who want a personal landing page with their most important links and social icons.
 
 ---
-## ✨ Live
-- [vasan.dev](https://www.vasan.dev/)
 
 ## ✨ Features
 
@@ -17,14 +14,18 @@ Perfect for creators, developers, and professionals who want a personal landing 
 - 🛠 Easy to customize
 - © Dynamic year in footer
 
-## ✨ Additional Changes
+---
 
-- 🌑/🌕 Dark/light theme icon changes with theme (Repositoned)
-- ⬇️ Added Download CV button
-- added section seperator
-- added timeline section
-- button and links hover effect follows theme
+## Make your own Links page
 
-## ✨ Huge Credits 
-- [markodenic.com](https://github.com/markodenic/links)
-- [Jatin Sharma](https://codepen.io/j471n/pens/showcase)
+1. Fork this repository.
+2. Adjust links.
+3. Deploy it!
+4. Add it to the list below (optional, of course)
+5. Share it on Social Media (and show it ot me, I'd love to see it)
+
+---
+
+## Used by
+[Marko Denic](https://denicmarko.pages.dev)
+[Vasanthakumar](https://www.vasan.dev/)
