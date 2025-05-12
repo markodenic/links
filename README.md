@@ -27,5 +27,7 @@ Perfect for creators, developers, and professionals who want a personal landing 
 ---
 
 ## Used by
-[Marko Denic](https://denicmarko.pages.dev)
-[Vasanthakumar](https://www.vasan.dev/)
+| Website                                     |
+|---------------------------------------------|
+| [Marko Denic](https://denicmarko.pages.dev) |
+| [Vasanthakumar](https://www.vasan.dev/)     |
