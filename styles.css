@@ -171,17 +171,19 @@ h1 {
     justify-content: center;
     gap: 1rem;
     margin: 1rem 0;
+    flex-wrap: wrap;
 }
 
 .share-button {
     background: var(--hover);
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     border-radius: var(--radius);
     color: var(--text);
     cursor: pointer;
     transition: var(--transition);
     font-size: 0.9rem;
+    min-width: 120px;
 }
 
 .share-button:hover {
@@ -257,4 +259,32 @@ h1 {
 
 .download-qr:hover {
     opacity: 0.8;
+}
+
+/* Media query for mobile screens */
+@media screen and (max-width: 480px) {
+    .share-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+        padding: 0 1rem;
+    }
+
+    .share-button {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+    }
+
+    /* Adjust container padding for mobile */
+    .container {
+        padding: 1.5rem;
+    }
+
+    /* Adjust modal for mobile */
+    .modal {
+        width: 90%;
+        max-width: 320px;
+        padding: 1.5rem;
+    }
 } 
