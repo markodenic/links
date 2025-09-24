@@ -13,6 +13,7 @@ Perfect for creators, developers, and professionals who want a personal landing 
 - 🔗 Main links + social icons (SVG)
 - 🛠 Easy to customize
 - © Dynamic year in footer
+- Foto usando o serviço unavatar.io -> https://unavatar.io/youtube/dicasdomarcelo
 
 ---
 
