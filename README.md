@@ -13,7 +13,7 @@ Perfect for creators, developers, and professionals who want a personal landing 
 - 🔗 Main links + social icons (SVG)
 - 🛠 Easy to customize
 - © Dynamic year in footer
-
+- Foto usando o serviço unavatar.io -> https://unavatar.io/youtube/dicasdomarcelo
 
 ---
 
@@ -32,3 +32,4 @@ Perfect for creators, developers, and professionals who want a personal landing 
 |---------------------------------------------|
 | [Marko Denic](https://denicmarko.pages.dev) |
 | [Vasanthakumar](https://www.vasan.dev/)     |
+| [Marcelo](https://limnuz.github.io/links/)  |
